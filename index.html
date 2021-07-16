@@ -139,21 +139,37 @@ console.log(item[i]);
     // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
     //     Записати цей об'єкт в новий масив
 
-   let newMassifs = [];
+   let usersWithCities = [];
     let address = [];
     for ( i = 0; i < usersWithId.length; i++){
-        newMassifs = usersWithId[i];
-        console.log(newMassifs);
+        // usersWithCities = usersWithId[i];
+        // console.log(usersWithId[i]);
     }
-    // for (i=0; i < citiesWithId.length; i++)
-
-
-        // if ( usersWithId.id === citiesWithId.user_id ){
-        //     address = [citiesWithId.user_id , citiesWithId.country, citiesWithId. city];
-        //     // newMassifs = [usersWithId.id,usersWithId.name, usersWithId.age,usersWithId.status,'address:',citiesWithId.user_id,citiesWithId.country,citiesWithId. city];
-        //     console.log(`${address[i]}`);
-        // }
-
+         let user_id = citiesWithId.user_id;
+    citiesWithId.sort((prev, next) => {
+             if ( prev.user_id < next.user_id ) return -1;
+             if ( prev.user_id < next.user_id ) return 1;
+         });
+    address = citiesWithId;
+         console.log(address);
+         for (i=0; i< address.length; i++){
+             // console.log(address[i]);
+         }
+    usersWithCities = usersWithId.concat(address);
+    console.log(usersWithCities);
+    // Example:
+    //     let usersWithCities = [
+    //         {
+    //             id: 1, // <===
+    //             name: 'vasya',
+    //             age: 31,
+    //             status: false,
+    //             address: {
+    //                 user_id: 1, // <===
+    //                 country: 'Ukraine',
+    //                 city: 'Ternopil'
+    //             }
+    //         },
 </script>
 </body>
 </html>
